@@ -17,7 +17,7 @@ function Header() {
 
     useEffect(() => {
         setTimeout(() => {
-            setSearchResult([1, 2, 3]);
+            setSearchResult([]);
         }, 0);
     }, []);
 
@@ -31,7 +31,7 @@ function Header() {
                 <Tippy
                     interactive
                     visible={searchResult.length > 0}
-                    render={attrs => (
+                    render={(attrs) => (
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                             <PopperWrapper>
                                 <h4 className={cx('search-title')}>Accounts</h4>
@@ -58,9 +58,8 @@ function Header() {
                 </Tippy>
 
                 <div className={cx('actions')}>
-                    <Button>
-                        Log in
-                    </Button>
+                    <Button text>Upload</Button>
+                    <Button primary>Log in</Button>
                 </div>
             </div>
         </header>
