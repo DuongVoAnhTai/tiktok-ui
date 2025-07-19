@@ -51,10 +51,9 @@ function Search() {
 
     const handleChange = (e) => {
         const searchValue = e.target.value;
-        if(!searchValue.startsWith(' ')) {
+        if (!searchValue.startsWith(' ')) {
             setSearchValue(searchValue);
         }
-
     };
 
     return (
@@ -90,7 +89,7 @@ function Search() {
                 )}
                 {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
 
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={e => e.preventDefault()}>
                     <SearchIcon />
                 </button>
             </div>
